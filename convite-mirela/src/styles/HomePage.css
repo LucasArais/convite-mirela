@@ -1,0 +1,73 @@
+/* HomePage.css */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a; /* Dark gray background that matches the image background */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.envelope-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  cursor: pointer;
+  background-color: #1a1a1a; /* Match the image background */
+}
+
+.envelope-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.full-image {
+  max-width: 100%;
+  max-height: 100vh;
+  object-fit: contain;
+  display: block;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .envelope-image {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .full-image {
+    max-width: 100%;
+    max-height: 100vh;
+  }
+}
+
+/* Portrait orientation for mobile devices */
+@media screen and (orientation: portrait) {
+  .full-image {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100vh;
+  }
+}
+
+/* Landscape orientation for mobile devices */
+@media screen and (orientation: landscape) {
+  .full-image {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100vh;
+  }
+}

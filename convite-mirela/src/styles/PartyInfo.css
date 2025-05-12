@@ -1,0 +1,361 @@
+/* Font import for the name */
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+
+/* Color variables */
+:root {
+  --serenity-blue: #92A8D1;  /* Serenity blue */
+  --fuchsia-pink: #FF00FF;   /* Fuchsia pink */
+  --tiffany-blue: #81D8D0;   /* Tiffany blue */
+  --light-gray: #f8f8f8;
+  --dark-gray: #666;
+  --white: #ffffff;
+}
+
+/* PartyInfo.css */
+.party-info-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background-color: var(--serenity-blue);
+  background-image: linear-gradient(to bottom right, var(--serenity-blue), var(--tiffany-blue));
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.invitation-card {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+  text-align: center;
+  margin: 20px auto;
+  overflow: visible;
+}
+
+/* Floral decorations using CSS */
+.flowers-top, .flowers-bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.flowers-top {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(255,0,255,0.1), rgba(255,255,255,0));
+}
+
+.flowers-top::before, .flowers-top::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.flowers-top::before {
+  background: radial-gradient(circle at 20% 30%, var(--fuchsia-pink) 5px, transparent 5px),
+              radial-gradient(circle at 40% 40%, var(--fuchsia-pink) 8px, transparent 8px),
+              radial-gradient(circle at 60% 20%, var(--fuchsia-pink) 6px, transparent 6px),
+              radial-gradient(circle at 80% 30%, var(--fuchsia-pink) 10px, transparent 10px),
+              radial-gradient(circle at 90% 40%, var(--fuchsia-pink) 5px, transparent 5px),
+              radial-gradient(circle at 10% 60%, var(--fuchsia-pink) 7px, transparent 7px);
+}
+
+.flowers-top::after {
+  background: radial-gradient(circle at 30% 20%, var(--tiffany-blue) 2px, transparent 2px),
+              radial-gradient(circle at 70% 50%, var(--tiffany-blue) 2px, transparent 2px),
+              radial-gradient(circle at 50% 70%, var(--tiffany-blue) 2px, transparent 2px);
+}
+
+.flowers-bottom {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(255,0,255,0.1), rgba(255,255,255,0));
+}
+
+.flowers-bottom::before, .flowers-bottom::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.flowers-bottom::before {
+  background: radial-gradient(circle at 10% 70%, var(--fuchsia-pink) 8px, transparent 8px),
+              radial-gradient(circle at 30% 60%, var(--fuchsia-pink) 6px, transparent 6px),
+              radial-gradient(circle at 50% 80%, var(--fuchsia-pink) 10px, transparent 10px),
+              radial-gradient(circle at 70% 60%, var(--fuchsia-pink) 7px, transparent 7px),
+              radial-gradient(circle at 90% 70%, var(--fuchsia-pink) 9px, transparent 9px);
+}
+
+.flowers-bottom::after {
+  background: radial-gradient(circle at 20% 80%, var(--tiffany-blue) 2px, transparent 2px),
+              radial-gradient(circle at 60% 70%, var(--tiffany-blue) 2px, transparent 2px),
+              radial-gradient(circle at 80% 90%, var(--tiffany-blue) 2px, transparent 2px);
+}
+
+/* Age badge */
+.age-badge {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: transparent;
+  border: 2px solid var(--tiffany-blue);
+  border-radius: 50%;
+  margin: 20px auto;
+  z-index: 1;
+}
+
+.age-badge::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 1px solid var(--tiffany-blue);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.age-number {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--tiffany-blue);
+}
+
+.age-text {
+  font-size: 16px;
+  color: var(--tiffany-blue);
+}
+
+/* Name section */
+.name-section {
+  margin: 20px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.name {
+  font-family: 'Tangerine', cursive, serif;
+  font-size: 60px;
+  color: var(--fuchsia-pink);
+  margin: 0;
+  line-height: 1;
+}
+
+/* Message section */
+.message-section, .invitation-section {
+  margin: 15px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.message, .invitation-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--dark-gray);
+}
+
+/* Date section */
+.date-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.date-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: var(--fuchsia-pink);
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.date-number {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--white);
+}
+
+.date-details {
+  text-align: left;
+}
+
+.day, .month {
+  margin: 0;
+  font-size: 14px;
+  color: var(--dark-gray);
+}
+
+.day {
+  font-weight: bold;
+}
+
+.year-container {
+  display: flex;
+  margin: 5px 0;
+}
+
+.year {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  background-color: var(--light-gray);
+  border-radius: 5px;
+  margin-right: 5px;
+  font-size: 14px;
+  color: var(--dark-gray);
+}
+
+.time {
+  margin: 0;
+  font-size: 14px;
+  color: var(--dark-gray);
+}
+
+/* Interactive section */
+.interactive-section {
+  margin: 30px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  font-size: 18px;
+  color: var(--serenity-blue);
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Location section */
+.location-section {
+  margin: 25px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.location-section h3 {
+  font-size: 18px;
+  color: var(--serenity-blue);
+  margin-bottom: 10px;
+}
+
+.venue-box {
+  background-color: rgba(129, 216, 208, 0.1); /* Tiffany blue with opacity */
+  border: 1px solid var(--tiffany-blue);
+  border-radius: 10px;
+  padding: 15px;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.venue-box h4 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: var(--dark-gray);
+}
+
+.venue-box p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: var(--dark-gray);
+}
+
+.map-icon {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: var(--tiffany-blue);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.map-icon span {
+  font-size: 12px;
+  color: var(--white);
+  font-weight: bold;
+}
+
+/* Footer icons */
+.footer-icons {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  cursor: pointer;
+}
+
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  background-color: var(--serenity-blue);
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.icon p {
+  font-size: 10px;
+  color: var(--dark-gray);
+  text-align: center;
+  margin: 5px 0 0;
+}
+
+/* Confirmation deadline */
+.confirmation-deadline {
+  margin: 20px 0;
+  font-size: 14px;
+  color: var(--dark-gray);
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .invitation-card {
+    padding: 20px 15px;
+  }
+  
+  .name {
+    font-size: 50px;
+  }
+  
+  .message, .invitation-text {
+    font-size: 13px;
+  }
+  
+  .footer-icons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .icon {
+    width: 80%;
+    margin-bottom: 15px;
+  }
+}
