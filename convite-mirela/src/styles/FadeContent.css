@@ -1,0 +1,128 @@
+.fade-content {
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base states - hidden */
+.fade-content.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.fade-content.fade-down {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.fade-content.fade-left {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.fade-content.fade-right {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.fade-content.fade-scale {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+/* Visible states */
+.fade-content.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-content.fade-down.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-content.fade-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-content.fade-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-content.fade-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger animations for multiple elements */
+.fade-content.stagger-1 {
+  transition-delay: 100ms;
+}
+
+.fade-content.stagger-2 {
+  transition-delay: 200ms;
+}
+
+.fade-content.stagger-3 {
+  transition-delay: 300ms;
+}
+
+.fade-content.stagger-4 {
+  transition-delay: 400ms;
+}
+
+.fade-content.stagger-5 {
+  transition-delay: 500ms;
+}
+
+/* Smooth entrance for text elements */
+.fade-content.text-smooth {
+  transition-duration: 800ms;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Bounce effect */
+.fade-content.bounce.visible {
+  animation: fadeInBounce 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes fadeInBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Slide and fade combination */
+.fade-content.slide-fade.fade-up {
+  transform: translateY(50px);
+}
+
+.fade-content.slide-fade.fade-down {
+  transform: translateY(-50px);
+}
+
+.fade-content.slide-fade.fade-left {
+  transform: translateX(50px);
+}
+
+.fade-content.slide-fade.fade-right {
+  transform: translateX(-50px);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .fade-content {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

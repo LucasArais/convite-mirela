@@ -3,9 +3,9 @@
 
 /* Color variables */
 :root {
-  --serenity-blue: #92A8D1;  /* Serenity blue */
-  --fuchsia-pink: #FF00FF;   /* Fuchsia pink */
-  --tiffany-blue: #81D8D0;   /* Tiffany blue */
+  --fuchsia-pink: #FF00FF;   /* Rosa pink - cor principal */
+  --tiffany-blue: #4fd1c5;   /* Verde turquesa do envelope - cor secundária */
+  --forest-green: #0a3b3b;   /* Verde escuro do fundo */
   --light-gray: #f8f8f8;
   --dark-gray: #666;
   --white: #ffffff;
@@ -17,10 +17,59 @@
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
-  background-color: var(--serenity-blue);
-  background-image: linear-gradient(to bottom right, var(--serenity-blue), var(--tiffany-blue));
+  background-color: #0a3b3b;
+  background-image: url('../assets/images/image.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 20px;
   overflow-y: auto;
+  position: relative;
+}
+
+/* Borboletas decorativas */
+.party-info-container::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  width: 80px;
+  height: 80px;
+  background-image: url('../assets/images/image-removebg-preview.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  animation: float 8s ease-in-out infinite;
+  pointer-events: none; /* Garante que a borboleta não interfira com cliques */
+}
+
+.party-info-container::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  right: 15%;
+  width: 60px;
+  height: 60px;
+  background-image: url('../assets/images/ChatGPT Image 8 de jun. de 2025, 21_46_58.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  animation: float 6s ease-in-out infinite reverse;
+  pointer-events: none; /* Garante que a borboleta não interfira com cliques */
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
 }
 
 .invitation-card {
@@ -240,7 +289,7 @@
 
 .section-title {
   font-size: 18px;
-  color: var(--serenity-blue);
+  color: var(--tiffany-blue);
   margin-bottom: 20px;
   font-weight: bold;
 }
@@ -254,7 +303,7 @@
 
 .location-section h3 {
   font-size: 18px;
-  color: var(--serenity-blue);
+  color: var(--tiffany-blue);
   margin-bottom: 10px;
 }
 
@@ -264,7 +313,8 @@
   border-radius: 10px;
   padding: 15px;
   margin: 0 auto;
-  max-width: 300px;
+  width: 100%;
+  max-width: 420px;
 }
 
 .venue-box h4 {
@@ -297,33 +347,91 @@
 /* Footer icons */
 .footer-icons {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
   margin: 30px 0;
   position: relative;
   z-index: 1;
 }
 
+/* Estilo base para todos os botões */
 .icon {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 30%;
+  width: 100%;
+  max-width: 420px;
   cursor: pointer;
+  padding: 15px 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  border: none;
+  margin: 0 auto;
 }
 
-.icon-circle {
-  width: 40px;
-  height: 40px;
-  background-color: var(--serenity-blue);
+.icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.icon .icon-circle {
+  width: 45px;
+  height: 45px;
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .icon p {
-  font-size: 10px;
-  color: var(--dark-gray);
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
   text-align: center;
-  margin: 5px 0 0;
+  margin: 0;
+}
+
+/* Botão de confirmação de presença - DESTAQUE (apenas cor diferente) */
+.icon.confirm-presence {
+  background-color: var(--fuchsia-pink);
+  box-shadow: 0 4px 10px rgba(255, 0, 255, 0.2);
+}
+
+.icon.confirm-presence:hover {
+  box-shadow: 0 6px 15px rgba(255, 0, 255, 0.3);
+}
+
+.icon.confirm-presence .icon-circle::before {
+  content: '✓';
+  color: white;
+  font-size: 24px;
+}
+
+/* Outros botões */
+.other-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+}
+
+.icon:not(.confirm-presence) {
+  background-color: var(--tiffany-blue);
+}
+
+.icon.manual .icon-circle::before {
+  content: '📋';
+  font-size: 18px;
+}
+
+.icon.gift .icon-circle::before {
+  content: '🎁';
+  font-size: 18px;
 }
 
 /* Confirmation deadline */
