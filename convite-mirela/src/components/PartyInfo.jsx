@@ -3,7 +3,7 @@ import FadeContent from './FadeContent';
 import '../styles/PartyInfo.css';
 
 function PartyInfo() {
-  const celebrationWords = [' comemoração', ' data marcante', ' ocasião única', ' passagem inesquecível'];
+  const celebrationWords = ['comemoração', 'data marcante', 'ocasião única', 'passagem inesquecível'];
   const momentWords = ['momento especial', 'dia único', 'momento mágico', 'dia inesquecível'];
 
   return (
@@ -37,7 +37,7 @@ function PartyInfo() {
         <FadeContent direction="up" delay={600}>
           <div className="invitation-section">
             <p className="invitation-text">
-              É com muita alegria que convido você para a
+              É com muita alegria que convido você para a{' '}
               <RotatingText words={celebrationWords} className="secondary bounce-in" interval={5000} /> dos meus 15 anos.
             </p>
           </div>
