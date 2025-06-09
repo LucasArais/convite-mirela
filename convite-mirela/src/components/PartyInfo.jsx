@@ -67,10 +67,10 @@ function PartyInfo() {
             <h3>Localização</h3>
             <div className="venue-box">
               <h4>Ilha de Capri Buffet Eventos</h4>
-              <p>Av. das Nações Unidas, 1000</p>
-              <p>São Paulo, SP</p>
-              <p>CEP: 04578-000</p>
-              <div className="map-icon" onClick={() => window.open('https://maps.google.com/?q=Ilha de Capri Buffet Eventos, São Paulo, SP')}>
+              <p>Rodovia Anchieta, SP-150, km 28</p>
+              <p>Vila Balnearia, São Bernardo do Campo - SP</p>
+              <p>CEP: 09822-250</p>
+              <div className="map-icon" onClick={() => window.open('https://maps.google.com/?q=Ilha de Capri Buffet Eventos, Rodovia Anchieta, SP-150, km 28, São Bernardo do Campo, SP')}>
                 <span>COMO CHEGAR</span>
               </div>
             </div>
