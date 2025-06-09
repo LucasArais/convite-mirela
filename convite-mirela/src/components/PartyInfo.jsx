@@ -3,7 +3,7 @@ import FadeContent from './FadeContent';
 import '../styles/PartyInfo.css';
 
 function PartyInfo() {
-  const celebrationWords = ['comemoração', 'data marcante', 'ocasião única', 'passagem inesquecível'];
+  const celebrationWords = [' comemoração', ' data marcante', ' ocasião única', ' passagem inesquecível'];
   const momentWords = ['momento especial', 'dia único', 'momento mágico', 'dia inesquecível'];
 
   return (
