@@ -11,22 +11,22 @@ function VideoPlayer() {
     const videoElement = videoRef.current;
     
     if (videoElement) {
-      // Play the video when component mounts
-      videoElement.play().catch(error => {
-        console.error("Error playing video:", error);
-        // If autoplay fails (common on mobile), show a play button
-        const container = document.querySelector('.video-wrapper');
-        if (container) {
-          const playButton = document.createElement('button');
-          playButton.className = 'play-button';
-          playButton.innerHTML = '▶';
-          playButton.addEventListener('click', () => {
-            videoElement.play();
-            playButton.remove();
+      // Force autoplay with better browser compatibility
+      const attemptPlay = () => {
+        videoElement.muted = true; // Start muted to improve autoplay chances
+        videoElement.play()
+          .then(() => {
+            // Once playing, unmute if possible
+            videoElement.muted = false;
+          })
+          .catch(error => {
+            console.error("Error playing video:", error);
+            // If still fails, retry after a short delay
+            setTimeout(attemptPlay, 1000);
           });
-          container.appendChild(playButton);
-        }
-      });
+      };
+      
+      attemptPlay();
 
       // Navigate to party info when video ends
       const handleVideoEnd = () => {
@@ -50,7 +50,7 @@ function VideoPlayer() {
           className="full-video"
           autoPlay
           playsInline
-          muted={false}
+          muted={true}
           controls={false}
           src={videoSource}
         >
