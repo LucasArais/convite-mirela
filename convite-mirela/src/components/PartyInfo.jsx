@@ -8,13 +8,19 @@ function PartyInfo() {
 
   return (
     <div className="party-info-container">
+      <div className="butterfly-1"></div>
+      <div className="butterfly-2"></div>
+      <div className="butterfly-3"></div>
+      <div className="butterfly-4"></div>
       <div className="invitation-card">
         {/* Content will be styled to match the image */}
         <div className="header">
           <div className="flowers-top"></div>
-          <div className="age-badge">
-            <span className="age-number">15</span>
-            <span className="age-text">anos</span>
+          <div className="age-badge-container">
+            <div className="age-badge">
+              <div className="age-number">15</div>
+              <div className="age-text">anos</div>
+            </div>
           </div>
         </div>
         
@@ -101,6 +107,7 @@ function PartyInfo() {
           
           <div className="confirmation-deadline">
             <p>Confirmar presença até dia 15/07</p>
+            <p className="special-message">Conto com sua presença para tornar essa noite ainda mais especial. Até lá!</p>
           </div>
         </div>
         

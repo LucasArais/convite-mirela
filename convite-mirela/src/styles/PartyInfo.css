@@ -28,36 +28,73 @@
 }
 
 /* Borboletas decorativas */
-.party-info-container::before {
+.party-info-container::before,
+.party-info-container::after,
+.party-info-container .butterfly-1,
+.party-info-container .butterfly-2,
+.party-info-container .butterfly-3,
+.party-info-container .butterfly-4 {
   content: '';
   position: absolute;
-  top: 15%;
-  left: 10%;
-  width: 80px;
-  height: 80px;
-  background-image: url('../assets/images/image-removebg-preview.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: 1;
-  animation: float 8s ease-in-out infinite;
+  z-index: 3;
   pointer-events: none; /* Garante que a borboleta não interfira com cliques */
 }
 
+.party-info-container::before {
+  top: 5%;
+  left: 5%;
+  width: 80px;
+  height: 80px;
+  background-image: url('../assets/images/image-removebg-preview.png');
+  animation: float 8s ease-in-out infinite;
+}
+
 .party-info-container::after {
-  content: '';
-  position: absolute;
-  bottom: 20%;
-  right: 15%;
+  bottom: 5%;
+  right: 5%;
   width: 60px;
   height: 60px;
   background-image: url('../assets/images/ChatGPT Image 8 de jun. de 2025, 21_46_58.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 1;
   animation: float 6s ease-in-out infinite reverse;
-  pointer-events: none; /* Garante que a borboleta não interfira com cliques */
+}
+
+.party-info-container .butterfly-1 {
+  top: 5%;
+  right: 5%;
+  width: 70px;
+  height: 70px;
+  background-image: url('../assets/images/image-removebg-preview.png');
+  animation: float 7s ease-in-out infinite 1s;
+}
+
+.party-info-container .butterfly-2 {
+  bottom: 5%;
+  left: 5%;
+  width: 50px;
+  height: 50px;
+  background-image: url('../assets/images/ChatGPT Image 8 de jun. de 2025, 21_46_58.png');
+  animation: float 9s ease-in-out infinite 2s;
+}
+
+.party-info-container .butterfly-3 {
+  top: 60%;
+  left: 2%;
+  width: 65px;
+  height: 65px;
+  background-image: url('../assets/images/image-removebg-preview.png');
+  animation: float 10s ease-in-out infinite 1.5s;
+}
+
+.party-info-container .butterfly-4 {
+  top: 60%;
+  right: 2%;
+  width: 55px;
+  height: 55px;
+  background-image: url('../assets/images/ChatGPT Image 8 de jun. de 2025, 21_46_58.png');
+  animation: float 8.5s ease-in-out infinite 0.5s;
 }
 
 @keyframes float {
@@ -76,13 +113,14 @@
   position: relative;
   width: 100%;
   max-width: 400px;
-  background-color: var(--white);
+  background-color: rgba(240, 248, 255, 0.95); /* Very light blue, almost white (aliceblue) */
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   padding: 30px 20px;
   text-align: center;
   margin: 20px auto;
   overflow: visible;
+  z-index: 2;
 }
 
 /* Floral decorations using CSS */
@@ -97,7 +135,7 @@
 
 .flowers-top {
   top: 0;
-  background: linear-gradient(to bottom, rgba(255,0,255,0.1), rgba(255,255,255,0));
+  background: none;
 }
 
 .flowers-top::before, .flowers-top::after {
@@ -108,83 +146,115 @@
 }
 
 .flowers-top::before {
-  background: radial-gradient(circle at 20% 30%, var(--fuchsia-pink) 5px, transparent 5px),
-              radial-gradient(circle at 40% 40%, var(--fuchsia-pink) 8px, transparent 8px),
-              radial-gradient(circle at 60% 20%, var(--fuchsia-pink) 6px, transparent 6px),
-              radial-gradient(circle at 80% 30%, var(--fuchsia-pink) 10px, transparent 10px),
-              radial-gradient(circle at 90% 40%, var(--fuchsia-pink) 5px, transparent 5px),
-              radial-gradient(circle at 10% 60%, var(--fuchsia-pink) 7px, transparent 7px);
+  background: none;
 }
 
 .flowers-top::after {
-  background: radial-gradient(circle at 30% 20%, var(--tiffany-blue) 2px, transparent 2px),
-              radial-gradient(circle at 70% 50%, var(--tiffany-blue) 2px, transparent 2px),
-              radial-gradient(circle at 50% 70%, var(--tiffany-blue) 2px, transparent 2px);
+  background: none;
 }
 
 .flowers-bottom {
   bottom: 0;
-  background: linear-gradient(to top, rgba(255,0,255,0.1), rgba(255,255,255,0));
+  background: none;
+  display: none; /* Hide the flowers-bottom element */
 }
 
-.flowers-bottom::before, .flowers-bottom::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
+/* Remove any decorative dots */
+.invitation-card::before,
+.invitation-card::after,
+.invitation-card *::before,
+.invitation-card *::after {
+  background-image: none !important;
+  background: none !important;
 }
 
-.flowers-bottom::before {
-  background: radial-gradient(circle at 10% 70%, var(--fuchsia-pink) 8px, transparent 8px),
-              radial-gradient(circle at 30% 60%, var(--fuchsia-pink) 6px, transparent 6px),
-              radial-gradient(circle at 50% 80%, var(--fuchsia-pink) 10px, transparent 10px),
-              radial-gradient(circle at 70% 60%, var(--fuchsia-pink) 7px, transparent 7px),
-              radial-gradient(circle at 90% 70%, var(--fuchsia-pink) 9px, transparent 9px);
+/* Exception for age badge lines */
+.age-badge::before,
+.age-badge::after {
+  background: linear-gradient(to right, transparent, var(--tiffany-blue), transparent) !important;
 }
 
-.flowers-bottom::after {
-  background: radial-gradient(circle at 20% 80%, var(--tiffany-blue) 2px, transparent 2px),
-              radial-gradient(circle at 60% 70%, var(--tiffany-blue) 2px, transparent 2px),
-              radial-gradient(circle at 80% 90%, var(--tiffany-blue) 2px, transparent 2px);
+/* Exception for butterfly images */
+.party-info-container::before,
+.party-info-container::after,
+.party-info-container .butterfly-1,
+.party-info-container .butterfly-2,
+.party-info-container .butterfly-3,
+.party-info-container .butterfly-4 {
+  background-image: url('../assets/images/image-removebg-preview.png') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.party-info-container::after,
+.party-info-container .butterfly-2,
+.party-info-container .butterfly-4 {
+  background-image: url('../assets/images/ChatGPT Image 8 de jun. de 2025, 21_46_58.png') !important;
 }
 
 /* Age badge */
+.age-badge-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 30px auto 40px;
+  z-index: 1;
+}
+
 .age-badge {
   position: relative;
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
   background-color: transparent;
-  border: 2px solid var(--tiffany-blue);
-  border-radius: 50%;
-  margin: 20px auto;
+  margin: 0 auto;
   z-index: 1;
+  padding: 20px;
 }
 
 .age-badge::before {
   content: '';
   position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  border: 1px solid var(--tiffany-blue);
-  border-radius: 50%;
-  z-index: -1;
+  width: 150%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--tiffany-blue), transparent);
+  top: 0;
+  left: -25%;
+  opacity: 0.5;
+}
+
+.age-badge::after {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--tiffany-blue), transparent);
+  bottom: 0;
+  left: -25%;
+  opacity: 0.5;
 }
 
 .age-number {
-  font-size: 32px;
-  font-weight: bold;
+  font-size: 90px;
+  font-weight: 300;
   color: var(--tiffany-blue);
+  line-height: 0.9;
+  letter-spacing: 0;
+  margin-bottom: 5px;
+  font-family: 'Times New Roman', serif;
 }
 
 .age-text {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--tiffany-blue);
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  font-weight: 300;
+  margin-left: 4px;
 }
 
 /* Name section */
@@ -196,10 +266,12 @@
 
 .name {
   font-family: 'Tangerine', cursive, serif;
-  font-size: 60px;
+  font-size: calc(100px + 5vw);
   color: var(--fuchsia-pink);
   margin: 0;
-  line-height: 1;
+  line-height: 0.9;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
 }
 
 /* Message section */
@@ -210,7 +282,7 @@
 }
 
 .message, .invitation-text {
-  font-size: 14px;
+  font-size: calc(12px + 0.5vw);
   line-height: 1.5;
   color: var(--dark-gray);
 }
@@ -308,7 +380,7 @@
 }
 
 .venue-box {
-  background-color: rgba(129, 216, 208, 0.1); /* Tiffany blue with opacity */
+  background-color: rgba(240, 248, 255, 0.8); /* Very light blue, almost white (aliceblue) */
   border: 1px solid var(--tiffany-blue);
   border-radius: 10px;
   padding: 15px;
@@ -347,9 +419,10 @@
 /* Footer icons */
 .footer-icons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
   margin: 30px 0;
   position: relative;
   z-index: 1;
@@ -360,15 +433,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  max-width: 420px;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
   cursor: pointer;
-  padding: 15px 20px;
-  border-radius: 15px;
+  border-radius: 50%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
   border: none;
-  margin: 0 auto;
+  position: relative;
 }
 
 .icon:hover {
@@ -381,18 +454,19 @@
   height: 45px;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 5px;
 }
 
 .icon p {
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 500;
   color: white;
   text-align: center;
   margin: 0;
+  max-width: 90px;
 }
 
 /* Botão de confirmação de presença - DESTAQUE (apenas cor diferente) */
@@ -443,6 +517,17 @@
   z-index: 1;
 }
 
+.confirmation-deadline .special-message {
+  margin-top: 15px;
+  font-style: italic;
+  font-size: calc(13px + 0.3vw);
+  color: var(--fuchsia-pink);
+  line-height: 1.4;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 480px) {
   .invitation-card {
@@ -450,20 +535,49 @@
   }
   
   .name {
-    font-size: 50px;
+    font-size: calc(80px + 4vw);
   }
   
   .message, .invitation-text {
-    font-size: 13px;
+    font-size: calc(12px + 0.5vw);
   }
   
   .footer-icons {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
   }
   
   .icon {
-    width: 80%;
-    margin-bottom: 15px;
+    width: 90px;
+    height: 90px;
+  }
+  
+  .icon p {
+    font-size: 9px;
+    max-width: 80px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .footer-icons {
+    gap: 10px;
+  }
+  
+  .icon {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .icon p {
+    font-size: 8px;
+    max-width: 70px;
+  }
+  
+  .icon .icon-circle {
+    width: 35px;
+    height: 35px;
   }
 }
