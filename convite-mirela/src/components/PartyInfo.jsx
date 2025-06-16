@@ -83,17 +83,17 @@ function PartyInfo() {
           </div>
           
           <div className="footer-icons">
-            <FadeContent direction="scale" delay={800} className="bounce">
-              <div className="icon confirm-presence" onClick={() => window.open('https://forms.gle/8jbyJJUMLLBwSGdU6', '_blank')}>
-                <div className="icon-circle"></div>
-                <p>CONFIRMAR SUA PRESENÇA</p>
-              </div>
-            </FadeContent>
-            
-            <FadeContent direction="up" delay={1000}>
+            <FadeContent direction="up" delay={800}>
               <div className="icon manual" onClick={() => window.location.href = '/guest-manual'}>
                 <div className="icon-circle"></div>
                 <p>MANUAL DO CONVIDADO</p>
+              </div>
+            </FadeContent>
+            
+            <FadeContent direction="scale" delay={1000} className="bounce">
+              <div className="icon confirm-presence" onClick={() => window.open('https://forms.gle/8jbyJJUMLLBwSGdU6', '_blank')}>
+                <div className="icon-circle"></div>
+                <p>CONFIRMAR SUA PRESENÇA</p>
               </div>
             </FadeContent>
             

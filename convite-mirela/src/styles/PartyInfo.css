@@ -200,7 +200,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin: 30px auto 40px;
+  margin: 30px auto 0; /* Reduced bottom margin to bring closer to name */
   z-index: 1;
 }
 
@@ -259,7 +259,7 @@
 
 /* Name section */
 .name-section {
-  margin: 20px 0;
+  margin: -10px 0 20px; /* Negative top margin to overlap with age badge */
   position: relative;
   z-index: 1;
 }
